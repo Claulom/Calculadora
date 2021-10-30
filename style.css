@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.calcular{
+    margin-top: 3%;
+    width: 90%;
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid white;
+    background: linear-gradient(90deg, #000, #323232); 
+}
+
+.bg-animado:before, .bg-animado:after{
+    content: '';
+    position: absolute;
+    left: 250px;
+    top: 25px;
+    background: linear-gradient(120deg, #79fb00, #8d01a0, #0357a5,#ff004c,  
+    #e6036d, #fb0094,#ff6600, #04c2e4,#adad02, #00c3ff);
+    background-size: 200%;
+    width: calc(45% + 10px);
+    height: calc(43% + 15px);
+    z-index: -1;
+    animation: BGgradient 15s ease infinite;
+}
+
+@keyframes BGgradient{
+    0%{
+        background-position: 0% 200%;
+    }
+    50%{
+        background-position: 200% 0%;
+    }
+    100%{
+        background-position: 0% 250%;
+    }
+}
+.bg-animado:after{
+    filter: brightness(1.4);
+    filter: drop-shadow(16px 16px 20px rgb(248, 220, 97));
+    filter: blur(15px);
+} 
+
+#textoPantalla{
+    color: #00fff2;
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    border: 1px solid white;
+}   
+
+.history{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: flex-end;
+    height: 40px;
+    margin-bottom: 5%;
+    border: 1px solid white;
+    color: #00fff2;
+}
+
+.botonera ::first-line{
+    height: 0;
+    padding-bottom: 100%;
+}
+.botonera{
+    display: grid;
+    grid-gap: 0.25rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin-top: 3%;
+}
+.btn_igual{
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.btn_punto{
+    grid-row: span 2;
+}
+.btn_op{
+    grid-row: 4 span 2;
+}
+#mas{
+    grid-row: span 2;
+}
+.btn_acc, .btn_op, .btn_num, .btn_punto, .btn_igual{
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 600px){
+    .bg-animado:before, .bg-animado:after{
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 8px;
+        background: linear-gradient(120deg, #79fb00, #8d01a0, #0357a5,#ff004c,  
+        #e6036d, #fb0094,#ff6600, #04c2e4,#adad02, #00c3ff);
+        background-size: 200%;
+        width: calc(95% + 5px);
+        height: calc(50% + 5px);
+        z-index: -1;
+        animation: BGgradient 15s ease infinite;
+    }
+}
