@@ -107,3 +107,18 @@
         animation: BGgradient 15s ease infinite;
     }
 }
+@media only screen and (max-width: 1440px){
+    .bg-animado:before, .bg-animado:after{
+        content: '';
+        position: absolute;
+        left: 500px;
+        top: 32px;
+        background: linear-gradient(120deg, #79fb00, #8d01a0, #0357a5,#ff004c,  
+        #e6036d, #fb0094,#ff6600, #04c2e4,#adad02, #00c3ff);
+        background-size: 125%;
+        width: calc(30% + 5px);
+        height: calc(30% + 5px);
+        z-index: -1;
+        animation: BGgradient 15s ease infinite;
+    }
+}
